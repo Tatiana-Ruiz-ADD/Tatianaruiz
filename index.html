@@ -14,7 +14,7 @@
     <meta property="og:locale" content="es_CL">
 
     <!-- Favicon con tus iniciales -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23276B4D'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='%23FFFFFF'%3ETR%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F4C5C'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='%23FFFFFF'%3ETR%3C/text%3E%3C/svg%3E">
 
     <!-- Google Fonts Minimalistas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,16 +25,17 @@
 
     <style>
         :root {
-            --mint-primary: #72C198;   /* decorativo: íconos, bordes */
-            --mint-light: #E8F5EF;     /* fondos suaves */
-            --mint-dark: #276B4D;      /* NUEVO: botones, enlaces y textos en verde (contraste accesible) */
-            --mint-dark-hover: #1F5A40;
-            --butter-bg: #FAF8F2;
-            --butter-card: #FFFDF9;
+            /* Paleta azul petróleo */
+            --mint-primary: #E07A5F;   /* acento terracota: detalles mínimos */
+            --mint-light: #E6F0F1;     /* fondo suave de etiquetas */
+            --mint-dark: #0F4C5C;      /* principal: botones, enlaces, títulos de acento */
+            --mint-dark-hover: #0A3A47;
+            --butter-bg: #F7F6F2;      /* arena muy clara */
+            --butter-card: #FFFFFF;
             --white: #FFFFFF;
-            --text-dark: #2D3748;
-            --text-muted: #5B6779;     /* un poco más oscuro para leer mejor sobre crema */
-            --border-color: #E2E8F0;
+            --text-dark: #1F2933;
+            --text-muted: #52606D;
+            --border-color: #E4E2DC;
             --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.04);
             --shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.08);
             --radius: 12px;
@@ -129,6 +130,10 @@
         /* El ancho se limita al texto, no al contenedor, para que quede alineado con las otras secciones */
         .hero-content p {
             max-width: 720px;
+        }
+
+        .badge-location i {
+            color: var(--mint-primary);
         }
 
         .badge-location {
@@ -264,8 +269,55 @@
         /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 28px;
+            grid-template-columns: 1fr;
+            gap: 36px;
+        }
+
+        /* Vista en vivo del proyecto, en un marco tipo navegador */
+        .project-card,
+        .project-card > div {
+            min-width: 0;
+        }
+
+        .project-preview {
+            margin-top: 8px;
+            margin-bottom: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: var(--white);
+        }
+
+        .browser-bar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 14px;
+            background-color: var(--butter-bg);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .browser-bar .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #D6D3CC;
+        }
+
+        .browser-bar .url {
+            margin-left: 10px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .project-preview iframe {
+            display: block;
+            width: 100%;
+            height: 560px;
+            border: 0;
         }
 
         .project-card {
@@ -281,7 +333,6 @@
         }
 
         .project-card:hover {
-            transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
         }
 
@@ -347,9 +398,9 @@
 
         .project-link {
             text-decoration: none;
-            color: var(--mint-dark);
-            font-weight: 500;
-            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            font-size: 0.82rem;
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -424,8 +475,11 @@
             section {
                 padding: 56px 0;
             }
-            .projects-grid {
-                grid-template-columns: 1fr;
+            .project-card {
+                padding: 20px;
+            }
+            .project-preview iframe {
+                height: 480px;
             }
         }
     </style>
@@ -458,9 +512,6 @@
             <div class="btn-group">
                 <a href="https://www.linkedin.com/in/tatiana-ruiz-urra96" target="_blank" rel="noopener" class="btn btn-primary">
                     <i class="fa-brands fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://beacons.ai/tatiruiz" target="_blank" rel="noopener" class="btn btn-secondary">
-                    <i class="fa-solid fa-link"></i> Beacons
                 </a>
                 <!-- CAMBIAR: reemplaza este correo por el que quieres mostrar -->
                 <a href="mailto:tatiana.ruiz2026@soymas.cl" class="btn btn-secondary">
@@ -525,9 +576,17 @@
                             <i class="fa-solid fa-chart-line"></i>
                             <span>[Resultado: ej. "Seguimiento de X entregas en Y estados" o "Reduce de X a Y minutos la consulta del estado de un pedido"]</span>
                         </div>
+                        <div class="project-preview">
+                            <div class="browser-bar">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                <span class="url">rocioaguayo.github.io/app-repartos/pagina-web.html</span>
+                            </div>
+                            <iframe src="https://rocioaguayo.github.io/app-repartos/pagina-web.html" title="Vista en vivo: App Leen" loading="lazy"></iframe>
+                        </div>
                     </div>
+                    <!-- Respaldo por si el navegador bloquea la vista -->
                     <a href="https://rocioaguayo.github.io/app-repartos/pagina-web.html" target="_blank" rel="noopener" class="project-link">
-                        Ver Proyecto Web <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        Abrir en pantalla completa <i class="fa-solid fa-up-right-from-square"></i>
                     </a>
                 </div>
 
@@ -544,9 +603,17 @@
                             <i class="fa-solid fa-chart-line"></i>
                             <span>[Resultado: ej. "Consolida X cuentas en un solo reporte" o "Cierre mensual de X días a Y días"]</span>
                         </div>
+                        <div class="project-preview">
+                            <div class="browser-bar">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                <span class="url">tesoapp-hidvp628y-tesoapp-tatiana.vercel.app</span>
+                            </div>
+                            <iframe src="https://tesoapp-hidvp628y-tesoapp-tatiana.vercel.app" title="Vista en vivo: TesoApp" loading="lazy"></iframe>
+                        </div>
                     </div>
+                    <!-- Respaldo por si el navegador bloquea la vista -->
                     <a href="https://tesoapp-hidvp628y-tesoapp-tatiana.vercel.app" target="_blank" rel="noopener" class="project-link">
-                        Ver Proyecto Web <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        Abrir en pantalla completa <i class="fa-solid fa-up-right-from-square"></i>
                     </a>
                 </div>
             </div>
