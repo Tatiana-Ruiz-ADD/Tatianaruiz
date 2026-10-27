@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tatiana Ruiz | Analista de Datos</title>
+    <meta name="description" content="Tatiana Ruiz, Analista de Datos en Santiago de Chile. Dashboards en Power BI y Looker Studio, control de KPIs y optimización de procesos.">
+
+    <!-- Vista previa al compartir en LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Tatiana Ruiz | Analista de Datos">
+    <meta property="og:description" content="Dashboards en Power BI y Looker Studio, control de KPIs y optimización de procesos.">
+    <meta property="og:url" content="https://tatianaruiz2026-analyst.github.io/Tatianaruiz/">
+    <meta property="og:locale" content="es_CL">
+
+    <!-- Favicon con tus iniciales -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23276B4D'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='%23FFFFFF'%3ETR%3C/text%3E%3C/svg%3E">
+
     <!-- Google Fonts Minimalistas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,16 +25,18 @@
 
     <style>
         :root {
-            --mint-primary: #72C198;
-            --mint-light: #E8F5EF;
-            --mint-hover: #5DA982;
+            --mint-primary: #72C198;   /* decorativo: íconos, bordes */
+            --mint-light: #E8F5EF;     /* fondos suaves */
+            --mint-dark: #276B4D;      /* NUEVO: botones, enlaces y textos en verde (contraste accesible) */
+            --mint-dark-hover: #1F5A40;
             --butter-bg: #FAF8F2;
             --butter-card: #FFFDF9;
             --white: #FFFFFF;
             --text-dark: #2D3748;
-            --text-muted: #64748B;
+            --text-muted: #5B6779;     /* un poco más oscuro para leer mejor sobre crema */
             --border-color: #E2E8F0;
             --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.04);
+            --shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.08);
             --radius: 12px;
         }
 
@@ -33,11 +47,22 @@
             font-family: 'Outfit', sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; /* evita que el menú fijo tape los títulos */
+        }
+
         body {
             background-color: var(--white);
             color: var(--text-dark);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--mint-dark);
+            outline-offset: 3px;
+            border-radius: 4px;
         }
 
         .container {
@@ -61,6 +86,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 12px;
         }
 
         .logo {
@@ -72,7 +98,7 @@
         }
 
         .logo span {
-            color: var(--mint-primary);
+            color: var(--mint-dark);
         }
 
         .nav-links {
@@ -90,7 +116,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--text-dark);
+            color: var(--mint-dark);
         }
 
         /* Hero Section */
@@ -100,8 +126,9 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        .hero-content {
-            max-width: 750px;
+        /* El ancho se limita al texto, no al contenedor, para que quede alineado con las otras secciones */
+        .hero-content p {
+            max-width: 720px;
         }
 
         .badge-location {
@@ -109,7 +136,7 @@
             align-items: center;
             gap: 6px;
             background-color: var(--mint-light);
-            color: var(--mint-hover);
+            color: var(--mint-dark);
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.85rem;
@@ -123,6 +150,13 @@
             letter-spacing: -1px;
             line-height: 1.2;
             margin-bottom: 8px;
+        }
+
+        .hero .hero-role {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 12px;
         }
 
         .hero p {
@@ -151,12 +185,12 @@
         }
 
         .btn-primary {
-            background-color: var(--mint-primary);
+            background-color: var(--mint-dark);
             color: var(--white);
         }
 
         .btn-primary:hover {
-            background-color: var(--mint-hover);
+            background-color: var(--mint-dark-hover);
         }
 
         .btn-secondary {
@@ -166,13 +200,18 @@
         }
 
         .btn-secondary:hover {
-            background-color: var(--butter-card);
+            border-color: var(--mint-primary);
+            color: var(--mint-dark);
         }
 
         /* Sections */
         section {
             padding: 70px 0;
             border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-alt {
+            background-color: var(--butter-bg);
         }
 
         .section-title {
@@ -206,7 +245,7 @@
 
         .skill-card i {
             font-size: 1.5rem;
-            color: var(--mint-primary);
+            color: var(--mint-dark);
             margin-bottom: 12px;
         }
 
@@ -238,41 +277,77 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .project-card:hover {
             transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
         }
 
         .project-tag {
             display: inline-block;
             background-color: var(--mint-light);
-            color: var(--mint-hover);
+            color: var(--mint-dark);
             font-size: 0.75rem;
             font-weight: 600;
             padding: 4px 10px;
             border-radius: 6px;
             margin-bottom: 14px;
             text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
         .project-title {
             font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
+        }
+
+        .project-credit {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
         }
 
         .project-desc {
             font-size: 0.95rem;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             font-weight: 300;
+        }
+
+        .project-role {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .project-role strong {
+            font-weight: 600;
+        }
+
+        /* Bloque de resultados: complétalo con tus cifras */
+        .project-result {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            background-color: var(--mint-light);
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .project-result i {
+            color: var(--mint-dark);
+            margin-top: 3px;
         }
 
         .project-link {
             text-decoration: none;
-            color: var(--mint-hover);
+            color: var(--mint-dark);
             font-weight: 500;
             font-size: 0.9rem;
             display: inline-flex;
@@ -293,6 +368,25 @@
             border-radius: var(--radius);
         }
 
+        .community-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .community-card .org {
+            font-size: 0.9rem;
+            color: var(--mint-dark);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .community-card .desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
         /* Footer */
         footer {
             padding: 40px 0;
@@ -302,12 +396,36 @@
             background-color: var(--butter-bg);
         }
 
+        /* Celular: el menú baja bajo el logo en vez de desaparecer */
         @media (max-width: 768px) {
+            header {
+                padding: 14px 0;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .nav-links {
+                gap: 18px;
+            }
+            .nav-links a {
+                font-size: 0.9rem;
+            }
+            html {
+                scroll-padding-top: 110px;
+            }
+            .hero {
+                padding: 56px 0 48px;
+            }
             .hero h1 {
                 font-size: 2.1rem;
             }
-            .nav-links {
-                display: none;
+            section {
+                padding: 56px 0;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -333,19 +451,18 @@
                 <i class="fa-solid fa-location-dot"></i> Santiago, Chile
             </div>
             <h1>Tatiana Ruiz</h1>
-            <p style="font-size: 1.3rem; font-weight: 500; color: var(--text-dark); margin-bottom: 12px;">
-                Analista de Datos
-            </p>
+            <p class="hero-role">Analista de Datos</p>
             <p>
                 Especializada en la optimización de procesos, gestión operativa y monitoreo de KPIs mediante Power BI, Looker Studio y Excel. Formada en la recopilación, consolidación y limpieza de datos para transformarlos en dashboards y reportes ejecutivos que faciliten la toma de decisiones estratégicas.
             </p>
             <div class="btn-group">
-                <a href="https://www.linkedin.com/in/tatiana-ruiz-urra96" target="_blank" class="btn btn-primary">
+                <a href="https://www.linkedin.com/in/tatiana-ruiz-urra96" target="_blank" rel="noopener" class="btn btn-primary">
                     <i class="fa-brands fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="https://beacons.ai/tatiruiz" target="_blank" class="btn btn-secondary">
+                <a href="https://beacons.ai/tatiruiz" target="_blank" rel="noopener" class="btn btn-secondary">
                     <i class="fa-solid fa-link"></i> Beacons
                 </a>
+                <!-- CAMBIAR: reemplaza este correo por el que quieres mostrar -->
                 <a href="mailto:tatiana.ruiz2026@soymas.cl" class="btn btn-secondary">
                     <i class="fa-regular fa-envelope"></i> Contactar
                 </a>
@@ -385,7 +502,7 @@
     </section>
 
     <!-- Proyectos Destacados -->
-    <section id="proyectos" style="background-color: var(--butter-bg);">
+    <section id="proyectos" class="section-alt">
         <div class="container">
             <h2 class="section-title">Proyectos Destacados</h2>
             <p class="section-subtitle">Casos de análisis de datos, visualización e inteligencia operacional</p>
@@ -396,11 +513,20 @@
                     <div>
                         <span class="project-tag">Logística & SLAs</span>
                         <h3 class="project-title">App Leen - Sistema de Repartos</h3>
+                        <p class="project-credit">En colaboración con Rocío Aguayo y Constanza Bau</p>
                         <p class="project-desc">
                             Análisis y diseño del flujo de trazabilidad en tiempo real para transportes y entregas. Monitoreo de estados operativos (Registrado, En Ruta, Entregado) e indicadores de volumen.
                         </p>
+                        <p class="project-role">
+                            <strong>Mi aporte:</strong> creé la página web y la presentación del proyecto.
+                        </p>
+                        <!-- COMPLETAR: cambia el texto entre corchetes por un resultado real -->
+                        <div class="project-result">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>[Resultado: ej. "Seguimiento de X entregas en Y estados" o "Reduce de X a Y minutos la consulta del estado de un pedido"]</span>
+                        </div>
                     </div>
-                    <a href="https://rocioaguayo.github.io/app-repartos/pagina-web.html" target="_blank" class="project-link">
+                    <a href="https://rocioaguayo.github.io/app-repartos/pagina-web.html" target="_blank" rel="noopener" class="project-link">
                         Ver Proyecto Web <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </div>
@@ -413,23 +539,14 @@
                         <p class="project-desc">
                             Aplicación orientada a la gestión y control presupuestario de tesorería. Análisis de flujos de caja y consolidación de reportes ejecutivos.
                         </p>
+                        <!-- COMPLETAR: cambia el texto entre corchetes por un resultado real -->
+                        <div class="project-result">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>[Resultado: ej. "Consolida X cuentas en un solo reporte" o "Cierre mensual de X días a Y días"]</span>
+                        </div>
                     </div>
-                    <a href="#" class="project-link">
-                        Ver detalles <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- Acción PYME -->
-                <div class="project-card">
-                    <div>
-                        <span class="project-tag">Optimización de Procesos</span>
-                        <h3 class="project-title">Proyecto Acción PYME</h3>
-                        <p class="project-desc">
-                            Estandarización y limpieza de bases de datos para el control de gestión operacional. Elaboración de reportes periódicos en Excel y Power BI para el seguimiento de KPIs.
-                        </p>
-                    </div>
-                    <a href="#" class="project-link">
-                        Ver detalles <i class="fa-solid fa-arrow-right"></i>
+                    <a href="https://tesoapp-hidvp628y-tesoapp-tatiana.vercel.app" target="_blank" rel="noopener" class="project-link">
+                        Ver Proyecto Web <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                 </div>
             </div>
@@ -443,13 +560,9 @@
             <p class="section-subtitle">Impacto social y capacitación en herramientas tecnológicas</p>
 
             <div class="community-card">
-                <h3 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 6px;">
-                    Instructora de Alfabetización Digital (Mención IA)
-                </h3>
-                <p style="font-size: 0.9rem; color: var(--mint-hover); font-weight: 500; margin-bottom: 12px;">
-                    Iniciativa de Impacto Social Comunitaria
-                </p>
-                <p style="font-size: 0.95rem; color: var(--text-muted); font-weight: 300;">
+                <h3>Instructora de Alfabetización Digital (Mención IA)</h3>
+                <p class="org">Iniciativa de Impacto Social Comunitaria</p>
+                <p class="desc">
                     Capacitación a jóvenes en el uso de herramientas tecnológicas modernas e Inteligencia Artificial, fomentando habilidades digitales prácticas para su desarrollo técnico y académico.
                 </p>
             </div>
