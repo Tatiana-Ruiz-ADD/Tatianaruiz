@@ -410,6 +410,162 @@
             text-decoration: underline;
         }
 
+        /* ===== Demo TesoApp ===== */
+        .tdemo { margin-top: 8px; margin-bottom: 14px; }
+        .tdemo-guide {
+            display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap;
+            background-color: var(--butter-bg); border: 1px dashed var(--border-color);
+            border-radius: 8px; padding: 10px 14px; margin-bottom: 12px;
+            font-size: 0.9rem; color: var(--text-dark);
+        }
+        .tdemo-step {
+            font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px;
+            color: var(--white); background-color: var(--mint-dark); padding: 3px 8px; border-radius: 6px;
+        }
+        .tdemo-window { margin: 0; }
+        .tdemo-app { padding: 0 18px 18px; min-height: 420px; }
+        .tdemo-tabs {
+            display: flex; gap: 4px; overflow-x: auto; border-bottom: 1px solid var(--border-color);
+            margin: 0 -18px 18px; padding: 0 12px; scrollbar-width: none;
+        }
+        .tdemo-tabs button {
+            flex: 0 0 auto; background: none; border: 0; border-bottom: 2px solid transparent;
+            padding: 12px 10px; font-size: 0.88rem; color: var(--text-muted); cursor: pointer;
+            display: inline-flex; align-items: center; gap: 6px; font-family: inherit;
+        }
+        .tdemo-tabs button.active { color: var(--mint-dark); border-bottom-color: var(--mint-dark); font-weight: 500; }
+        .tdemo-tabs button.pulse { animation: tdPulse 1.4s ease-in-out infinite; border-radius: 6px; }
+        @keyframes tdPulse { 0%,100% { background: transparent; } 50% { background: var(--mint-light); } }
+        .tdemo-pill {
+            background-color: var(--mint-primary); color: var(--white); font-size: 0.7rem; font-weight: 600;
+            border-radius: 10px; padding: 1px 7px;
+        }
+        .tdemo-pill.zero { background-color: var(--border-color); color: var(--text-muted); }
+        .tdemo-panel { display: none; }
+        .tdemo-panel.active { display: block; }
+        .tdemo-h { font-size: 0.85rem; font-weight: 600; color: var(--text-muted); margin: 18px 0 10px; text-transform: uppercase; letter-spacing: 0.3px; }
+        .tdemo-panel > .tdemo-h:first-child { margin-top: 0; }
+        .tdemo-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+        .tdemo-kpi { border: 1px solid var(--border-color); border-radius: 10px; padding: 12px 14px; }
+        .tdemo-kpi small { display: block; font-size: 0.78rem; color: var(--text-muted); }
+        .tdemo-kpi strong { font-size: 1.35rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+        .tdemo-kpi.main { background-color: var(--mint-dark); border-color: var(--mint-dark); color: var(--white); }
+        .tdemo-kpi.main small { color: rgba(255,255,255,0.8); }
+        .tdemo-kpi strong.flash { animation: tdFlash 0.9s ease; }
+        @keyframes tdFlash { 0% { color: var(--mint-primary); } 100% { color: inherit; } }
+        .tdemo-bars { display: grid; gap: 8px; }
+        .tdemo-bar { display: grid; grid-template-columns: 130px 1fr 90px; gap: 10px; align-items: center; font-size: 0.85rem; }
+        .tdemo-bar .track { height: 10px; background-color: var(--butter-bg); border-radius: 5px; overflow: hidden; }
+        .tdemo-bar .fill { height: 100%; border-radius: 5px; background-color: var(--mint-dark); transition: width 0.5s ease; }
+        .tdemo-bar .fill.out { background-color: var(--mint-primary); }
+        .tdemo-bar .val { text-align: right; font-variant-numeric: tabular-nums; color: var(--text-muted); }
+        .tdemo-list { display: grid; gap: 8px; }
+        .tdemo-grid2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+        .tdemo-item {
+            display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;
+            border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 12px; font-size: 0.88rem;
+        }
+        .tdemo-item .who { font-weight: 500; }
+        .tdemo-item .meta { color: var(--text-muted); font-size: 0.8rem; }
+        .tdemo-item .amt { font-variant-numeric: tabular-nums; font-weight: 500; }
+        .tdemo-item .amt.neg { color: #B4532F; }
+        .tdemo-item.new { animation: tdNew 1.2s ease; }
+        @keyframes tdNew { 0% { background-color: var(--mint-light); } 100% { background-color: transparent; } }
+        .tdemo-actions { display: flex; gap: 6px; }
+        .tdemo-btn, .tdemo-ghost {
+            font-family: inherit; font-size: 0.82rem; font-weight: 500; border-radius: 6px; padding: 7px 12px;
+            cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+        }
+        .tdemo-btn { background-color: var(--mint-dark); color: var(--white); border: 1px solid var(--mint-dark); }
+        .tdemo-btn:hover { background-color: var(--mint-dark-hover); }
+        .tdemo-ghost { background-color: var(--white); color: var(--text-dark); border: 1px solid var(--border-color); }
+        .tdemo-ghost:hover { border-color: var(--mint-dark); color: var(--mint-dark); }
+        .tdemo-badge { font-size: 0.75rem; font-weight: 600; padding: 3px 9px; border-radius: 10px; }
+        .tdemo-badge.ok { background-color: var(--mint-light); color: var(--mint-dark); }
+        .tdemo-badge.late { background-color: #FBEAE4; color: #9A4426; }
+        .tdemo-empty { color: var(--text-muted); font-size: 0.88rem; padding: 10px 0; }
+        .tdemo-form { border-top: 1px solid var(--border-color); margin-top: 18px; }
+        .tdemo-row { display: flex; gap: 8px; flex-wrap: wrap; }
+        .tdemo-row select, .tdemo-row input {
+            font-family: inherit; font-size: 0.88rem; padding: 7px 10px; border: 1px solid var(--border-color);
+            border-radius: 6px; background-color: var(--white); color: var(--text-dark); min-width: 0;
+        }
+        .tdemo-row select { flex: 1 1 160px; }
+        .tdemo-row input { flex: 0 1 120px; }
+        .tdemo-meter { height: 12px; background-color: #FBEAE4; border-radius: 6px; overflow: hidden; margin-bottom: 14px; }
+        .tdemo-meter span { display: block; height: 100%; background-color: var(--mint-dark); transition: width 0.5s ease; }
+        .tdemo-filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+        .tdemo-filters button {
+            font-family: inherit; font-size: 0.8rem; border: 1px solid var(--border-color); background: var(--white);
+            color: var(--text-muted); border-radius: 14px; padding: 4px 12px; cursor: pointer;
+        }
+        .tdemo-filters button.active { background-color: var(--mint-dark); border-color: var(--mint-dark); color: var(--white); }
+        .tdemo-foot {
+            display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;
+            margin-top: 12px; font-size: 0.82rem; color: var(--text-muted);
+        }
+        .tdemo-nav { display: inline-flex; gap: 6px; }
+        @media (max-width: 768px) {
+            .tdemo-app { padding: 0 12px 14px; }
+            .tdemo-tabs { margin: 0 -12px 14px; padding: 0 6px; }
+            .tdemo-bar { grid-template-columns: 95px 1fr 78px; font-size: 0.8rem; }
+            .tdemo-kpi strong { font-size: 1.15rem; }
+        }
+
+        /* ===== Demo App Leen ===== */
+        .view-switch {
+            display: inline-flex; gap: 4px; padding: 4px; margin: 4px 0 14px;
+            background-color: var(--butter-bg); border: 1px solid var(--border-color); border-radius: 10px;
+            max-width: 100%; flex-wrap: wrap;
+        }
+        .view-switch button {
+            font-family: inherit; font-size: 0.85rem; border: 0; background: none; color: var(--text-muted);
+            padding: 7px 14px; border-radius: 7px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+        }
+        .view-switch button.active { background-color: var(--white); color: var(--mint-dark); font-weight: 500; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        .leen-bar {
+            display: flex; justify-content: space-between; align-items: center;
+            background-color: #0B192C; color: #FFFFFF; padding: 11px 16px;
+        }
+        .leen-logo { font-weight: 600; letter-spacing: 1px; font-size: 0.9rem; }
+        .leen-who { font-size: 0.78rem; background: rgba(255,255,255,0.14); padding: 3px 10px; border-radius: 10px; }
+        .leen-note { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; }
+        .leen-scanner {
+            position: relative; overflow: hidden; margin-top: 12px; border: 1px dashed var(--border-color);
+            border-radius: 8px; padding: 14px; text-align: center; font-size: 0.85rem; color: var(--text-muted);
+            background-color: var(--butter-bg);
+        }
+        .leen-laser { position: absolute; left: 0; right: 0; top: 50%; height: 2px; background: var(--mint-primary); opacity: 0; }
+        .leen-scanner.on .leen-laser { opacity: 1; animation: ldLaser 0.7s ease-in-out 2 alternate; }
+        @keyframes ldLaser { from { top: 10%; } to { top: 90%; } }
+        .leen-st { font-size: 0.75rem; font-weight: 600; padding: 3px 9px; border-radius: 10px; white-space: nowrap; }
+        .leen-st.registrado { background-color: #EEF0F3; color: #475467; }
+        .leen-st.en_ruta { background-color: #FFF1D6; color: #8A5300; }
+        .leen-st.entregado { background-color: var(--mint-light); color: var(--mint-dark); }
+        .leen-st.no_entregado { background-color: #FBEAE4; color: #9A4426; }
+        .leen-proof { margin-top: 16px; border-top: 1px solid var(--border-color); }
+        .leen-proof .tdemo-row { margin-bottom: 10px; }
+        .leen-proof input { flex: 1 1 180px; }
+        .leen-firma {
+            display: block; width: 100%; height: 130px; margin-bottom: 10px; touch-action: none; cursor: crosshair;
+            border: 1px dashed var(--text-muted); border-radius: 8px; background-color: var(--butter-card);
+        }
+        .tdemo-ghost.done { border-color: var(--mint-dark); color: var(--mint-dark); background-color: var(--mint-light); }
+        .tdemo-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+        .leen-timeline { margin-top: 18px; display: grid; gap: 0; }
+        .leen-tl { display: grid; grid-template-columns: 28px 1fr; gap: 12px; padding-bottom: 18px; position: relative; }
+        .leen-tl::before { content: ''; position: absolute; left: 13px; top: 26px; bottom: 0; width: 2px; background: var(--border-color); }
+        .leen-tl:last-child::before { display: none; }
+        .leen-tl .ico {
+            width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: 0.75rem;
+            background: var(--butter-bg); border: 2px solid var(--border-color); color: var(--text-muted);
+        }
+        .leen-tl.done .ico { background: var(--mint-dark); border-color: var(--mint-dark); color: #FFFFFF; }
+        .leen-tl.done::before { background: var(--mint-dark); }
+        .leen-tl.fail .ico { background: #9A4426; border-color: #9A4426; color: #FFFFFF; }
+        .leen-tl b { display: block; font-weight: 500; font-size: 0.92rem; }
+        .leen-tl small { color: var(--text-muted); font-size: 0.8rem; }
+
         /* Community / Teaching Card */
         .community-card {
             background-color: var(--butter-card);
@@ -576,17 +732,103 @@
                             <i class="fa-solid fa-chart-line"></i>
                             <span>[Resultado: ej. "Seguimiento de X entregas en Y estados" o "Reduce de X a Y minutos la consulta del estado de un pedido"]</span>
                         </div>
-                        <div class="project-preview">
+                        <!-- Selector: demo de la app / página web (tu aporte) -->
+                        <div class="view-switch" role="tablist">
+                            <button type="button" class="active" data-view="ldemo"><i class="fa-solid fa-truck-fast"></i> Demo de la app</button>
+                            <button type="button" data-view="lweb"><i class="fa-solid fa-globe"></i> Página web (mi aporte)</button>
+                        </div>
+
+                        <!-- ===== DEMO INTERACTIVA APP LEEN (datos ficticios) ===== -->
+                        <div class="tdemo" id="ldemo">
+                            <div class="tdemo-guide">
+                                <span class="tdemo-step" id="ldStep">Paso 1 de 4</span>
+                                <span id="ldHint">El administrador ve todos los paquetes del día y en qué estado está cada uno.</span>
+                            </div>
+                            <div class="project-preview tdemo-window">
+                                <div class="leen-bar">
+                                    <span class="leen-logo">APP LEEN</span>
+                                    <span class="leen-who" id="ldWho">Admin</span>
+                                </div>
+                                <div class="tdemo-app">
+                                    <nav class="tdemo-tabs" role="tablist">
+                                        <button class="active" data-tab="pedidos" role="tab"><i class="fa-solid fa-boxes-stacked"></i> Admin · Pedidos</button>
+                                        <button data-tab="carga" role="tab"><i class="fa-solid fa-barcode"></i> Admin · Cargar</button>
+                                        <button data-tab="ruta" role="tab"><i class="fa-solid fa-route"></i> Repartidor · Mi ruta <span class="tdemo-pill" id="ldRutaN">0</span></button>
+                                        <button data-tab="seguimiento" role="tab"><i class="fa-solid fa-location-dot"></i> Cliente · Seguimiento</button>
+                                    </nav>
+
+                                    <div class="tdemo-panel active" data-panel="pedidos">
+                                        <div class="tdemo-kpis">
+                                            <div class="tdemo-kpi main"><small>Paquetes hoy</small><strong id="ldTotal">0</strong></div>
+                                            <div class="tdemo-kpi"><small>Registrados</small><strong id="ldReg">0</strong></div>
+                                            <div class="tdemo-kpi"><small>En ruta</small><strong id="ldRuta">0</strong></div>
+                                            <div class="tdemo-kpi"><small>Entregados</small><strong id="ldEnt">0</strong></div>
+                                        </div>
+                                        <h4 class="tdemo-h">Pedidos de hoy</h4>
+                                        <div class="tdemo-filters" id="ldFilters"></div>
+                                        <div id="ldPedidos" class="tdemo-list"></div>
+                                    </div>
+
+                                    <div class="tdemo-panel" data-panel="carga">
+                                        <h4 class="tdemo-h">Cargar paquetes al camión</h4>
+                                        <p class="leen-note">Elige el repartidor que se lleva los paquetes y escanea sus etiquetas una tras otra.</p>
+                                        <div class="tdemo-row">
+                                            <select id="ldRep" aria-label="Repartidor"></select>
+                                            <button type="button" class="tdemo-btn" id="ldScan"><i class="fa-solid fa-barcode"></i> Escanear etiqueta</button>
+                                        </div>
+                                        <div class="leen-scanner" id="ldScanner"><span class="leen-laser"></span><span id="ldScanTxt">Esperando etiqueta…</span></div>
+                                        <h4 class="tdemo-h">Por cargar</h4>
+                                        <div id="ldPorCargar" class="tdemo-list"></div>
+                                    </div>
+
+                                    <div class="tdemo-panel" data-panel="ruta">
+                                        <h4 class="tdemo-h" id="ldRutaTit">Mi ruta</h4>
+                                        <div id="ldMiRuta" class="tdemo-list"></div>
+                                        <div class="leen-proof" id="ldProof" hidden>
+                                            <h4 class="tdemo-h">Prueba de entrega · <span id="ldProofId"></span></h4>
+                                            <div class="tdemo-row">
+                                                <button type="button" class="tdemo-ghost" id="ldFoto"><i class="fa-solid fa-camera"></i> Tomar foto</button>
+                                                <input id="ldRecibe" type="text" placeholder="¿Quién recibe? (opcional)" aria-label="Quién recibe">
+                                            </div>
+                                            <p class="leen-note">Firma de quien recibe: dibuja dentro del recuadro.</p>
+                                            <canvas id="ldFirma" class="leen-firma" width="600" height="150"></canvas>
+                                            <div class="tdemo-row">
+                                                <button type="button" class="tdemo-btn" id="ldConfirmar" disabled><i class="fa-solid fa-check"></i> Confirmar entrega</button>
+                                                <button type="button" class="tdemo-ghost" id="ldBorrar">Borrar firma</button>
+                                                <button type="button" class="tdemo-ghost" id="ldNoEnt">No se pudo entregar</button>
+                                                <button type="button" class="tdemo-ghost" id="ldCancel">Cancelar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tdemo-panel" data-panel="seguimiento">
+                                        <h4 class="tdemo-h">¿Dónde está mi pedido?</h4>
+                                        <div class="tdemo-row"><select id="ldTrack" aria-label="Código de seguimiento"></select></div>
+                                        <div id="ldTimeline" class="leen-timeline"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tdemo-foot">
+                                <span><i class="fa-solid fa-circle-info"></i> Demo simplificada con datos ficticios.</span>
+                                <span class="tdemo-nav">
+                                    <button type="button" id="ldPrev" class="tdemo-ghost">Anterior</button>
+                                    <button type="button" id="ldNext" class="tdemo-btn">Siguiente</button>
+                                    <button type="button" id="ldReset" class="tdemo-ghost" title="Reiniciar demo"><i class="fa-solid fa-rotate-left"></i> Reiniciar</button>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Página web creada por Tatiana -->
+                        <div class="project-preview" id="lweb" hidden>
                             <div class="browser-bar">
                                 <span class="dot"></span><span class="dot"></span><span class="dot"></span>
                                 <span class="url">rocioaguayo.github.io/app-repartos/pagina-web.html</span>
                             </div>
-                            <iframe src="https://rocioaguayo.github.io/app-repartos/pagina-web.html" title="Vista en vivo: App Leen" loading="lazy"></iframe>
+                            <iframe data-src="https://rocioaguayo.github.io/app-repartos/pagina-web.html" title="Página web de App Leen" loading="lazy"></iframe>
                         </div>
                     </div>
-                    <!-- Respaldo por si el navegador bloquea la vista -->
                     <a href="https://rocioaguayo.github.io/app-repartos/pagina-web.html" target="_blank" rel="noopener" class="project-link">
-                        Abrir en pantalla completa <i class="fa-solid fa-up-right-from-square"></i>
+                        Ver página web en pantalla completa <i class="fa-solid fa-up-right-from-square"></i>
                     </a>
                 </div>
 
@@ -596,24 +838,81 @@
                         <span class="project-tag">Finanzas & Control</span>
                         <h3 class="project-title">TesoApp</h3>
                         <p class="project-desc">
-                            Aplicación orientada a la gestión y control presupuestario de tesorería. Análisis de flujos de caja y consolidación de reportes ejecutivos.
+                            Aplicación web de tesorería para comunidades (cursos, condominios, clubes, juntas de vecinos). Los miembros suben sus comprobantes de pago, la tesorería los aprueba y todos ven en tiempo real el fondo disponible, los gastos y quién está al día.
                         </p>
                         <!-- COMPLETAR: cambia el texto entre corchetes por un resultado real -->
                         <div class="project-result">
                             <i class="fa-solid fa-chart-line"></i>
-                            <span>[Resultado: ej. "Consolida X cuentas en un solo reporte" o "Cierre mensual de X días a Y días"]</span>
+                            <span>[Resultado: ej. "Usada por X comunidades" o "Morosidad de X% a Y% en el primer semestre"]</span>
                         </div>
-                        <div class="project-preview">
-                            <div class="browser-bar">
-                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                <span class="url">tesoapp-hidvp628y-tesoapp-tatiana.vercel.app</span>
+
+                        <!-- ===== DEMO INTERACTIVA TESOAPP (datos ficticios) ===== -->
+                        <div class="tdemo" id="tdemo">
+                            <div class="tdemo-guide">
+                                <span class="tdemo-step" id="tdStep">Paso 1 de 4</span>
+                                <span id="tdHint">Este es el panel de la tesorería: fondo disponible, ingresos y gastos del mes.</span>
                             </div>
-                            <iframe src="https://tesoapp-hidvp628y-tesoapp-tatiana.vercel.app" title="Vista en vivo: TesoApp" loading="lazy"></iframe>
+                            <div class="project-preview tdemo-window">
+                                <div class="browser-bar">
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="url">tesoapp · Junta de Vecinos Los Aromos (demo)</span>
+                                </div>
+                                <div class="tdemo-app">
+                                    <nav class="tdemo-tabs" role="tablist">
+                                        <button class="active" data-tab="resumen" role="tab"><i class="fa-solid fa-gauge"></i> Resumen</button>
+                                        <button data-tab="comprobantes" role="tab"><i class="fa-solid fa-receipt"></i> Comprobantes <span class="tdemo-pill" id="tdPend">3</span></button>
+                                        <button data-tab="morosidad" role="tab"><i class="fa-solid fa-users"></i> Morosidad</button>
+                                        <button data-tab="movimientos" role="tab"><i class="fa-solid fa-list"></i> Movimientos</button>
+                                    </nav>
+
+                                    <div class="tdemo-panel active" data-panel="resumen">
+                                        <div class="tdemo-kpis">
+                                            <div class="tdemo-kpi main"><small>Fondo disponible</small><strong id="tdFondo">$0</strong></div>
+                                            <div class="tdemo-kpi"><small>Ingresos del mes</small><strong id="tdIng">$0</strong></div>
+                                            <div class="tdemo-kpi"><small>Gastos del mes</small><strong id="tdGas">$0</strong></div>
+                                            <div class="tdemo-kpi"><small>Miembros al día</small><strong id="tdAlDia">0%</strong></div>
+                                        </div>
+                                        <h4 class="tdemo-h">Ingresos y gastos por categoría</h4>
+                                        <div id="tdBars" class="tdemo-bars"></div>
+                                    </div>
+
+                                    <div class="tdemo-panel" data-panel="comprobantes">
+                                        <h4 class="tdemo-h">Comprobantes por revisar</h4>
+                                        <div id="tdComp" class="tdemo-list"></div>
+                                        <form id="tdForm" class="tdemo-form">
+                                            <h4 class="tdemo-h">Simula ser un vecino: sube tu comprobante</h4>
+                                            <div class="tdemo-row">
+                                                <select id="tdMiembro" aria-label="Miembro"></select>
+                                                <input id="tdMonto" type="number" min="1000" step="1000" value="15000" aria-label="Monto">
+                                                <button type="submit" class="tdemo-btn"><i class="fa-solid fa-upload"></i> Subir</button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="tdemo-panel" data-panel="morosidad">
+                                        <h4 class="tdemo-h">Estado de cuotas · Octubre</h4>
+                                        <div class="tdemo-meter"><span id="tdMeter"></span></div>
+                                        <div id="tdMembers" class="tdemo-list tdemo-grid2"></div>
+                                    </div>
+
+                                    <div class="tdemo-panel" data-panel="movimientos">
+                                        <div class="tdemo-filters" id="tdFilters"></div>
+                                        <div id="tdMovs" class="tdemo-list"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tdemo-foot">
+                                <span><i class="fa-solid fa-circle-info"></i> Demo simplificada con datos ficticios.</span>
+                                <span class="tdemo-nav">
+                                    <button type="button" id="tdPrev" class="tdemo-ghost">Anterior</button>
+                                    <button type="button" id="tdNext" class="tdemo-btn">Siguiente</button>
+                                    <button type="button" id="tdReset" class="tdemo-ghost" title="Reiniciar demo"><i class="fa-solid fa-rotate-left"></i> Reiniciar</button>
+                                </span>
+                            </div>
                         </div>
                     </div>
-                    <!-- Respaldo por si el navegador bloquea la vista -->
-                    <a href="https://tesoapp-hidvp628y-tesoapp-tatiana.vercel.app" target="_blank" rel="noopener" class="project-link">
-                        Abrir en pantalla completa <i class="fa-solid fa-up-right-from-square"></i>
+                    <a href="https://tesoapp-ten.vercel.app/" target="_blank" rel="noopener" class="project-link">
+                        Visitar TesoApp <i class="fa-solid fa-up-right-from-square"></i>
                     </a>
                 </div>
             </div>
@@ -643,5 +942,398 @@
         </div>
     </footer>
 
+
+    <script>
+    /* Demo interactiva de TesoApp: todo es simulado y se reinicia al recargar */
+    (function () {
+        const root = document.getElementById('tdemo');
+        if (!root) return;
+        const $ = (id) => document.getElementById(id);
+        const clp = (n) => (n < 0 ? '-$' : '$') + Math.abs(n).toLocaleString('es-CL');
+        const CUOTA = 15000;
+
+        const initial = () => ({
+            fondoInicial: 842000,
+            miembros: [
+                { n: 'Carolina Muñoz', casa: 'Casa 12', pagado: true },
+                { n: 'Jorge Fuentes', casa: 'Casa 7', pagado: true },
+                { n: 'Paula Soto', casa: 'Casa 3', pagado: false },
+                { n: 'Andrés Rojas', casa: 'Casa 21', pagado: false },
+                { n: 'Valentina Díaz', casa: 'Casa 15', pagado: true },
+                { n: 'Felipe Contreras', casa: 'Casa 9', pagado: false },
+                { n: 'Daniela Pérez', casa: 'Casa 4', pagado: true },
+                { n: 'Matías Herrera', casa: 'Casa 18', pagado: false },
+                { n: 'Camila Vergara', casa: 'Casa 26', pagado: true },
+                { n: 'Ignacio Lagos', casa: 'Casa 30', pagado: false }
+            ],
+            pendientes: [
+                { n: 'Paula Soto', monto: 15000, fecha: 'hoy, 09:14', cat: 'Cuotas' },
+                { n: 'Andrés Rojas', monto: 15000, fecha: 'ayer, 20:41', cat: 'Cuotas' },
+                { n: 'Felipe Contreras', monto: 25000, fecha: 'ayer, 18:02', cat: 'Donaciones' }
+            ],
+            movs: [
+                { d: 'Cuota octubre · Carolina Muñoz', cat: 'Cuotas', m: 15000 },
+                { d: 'Cuota octubre · Jorge Fuentes', cat: 'Cuotas', m: 15000 },
+                { d: 'Cuota octubre · Valentina Díaz', cat: 'Cuotas', m: 15000 },
+                { d: 'Cuota octubre · Daniela Pérez', cat: 'Cuotas', m: 15000 },
+                { d: 'Cuota octubre · Camila Vergara', cat: 'Cuotas', m: 15000 },
+                { d: 'Rifa Fiestas Patrias', cat: 'Rifas', m: 68000 },
+                { d: 'Donación almacén Don Luis', cat: 'Donaciones', m: 30000 },
+                { d: 'Luz áreas comunes', cat: 'Gastos comunes', m: -42500 },
+                { d: 'Corte de pasto plaza', cat: 'Mantención', m: -35000 },
+                { d: 'Cambio de ampolletas pasaje', cat: 'Mantención', m: -18900 }
+            ],
+            filtro: 'Todas'
+        });
+        let st = initial();
+
+        const steps = [
+            { tab: 'resumen', hint: 'Este es el panel de la tesorería: fondo disponible, ingresos y gastos del mes.' },
+            { tab: 'comprobantes', hint: 'Los vecinos suben su comprobante. Prueba aprobar uno y mira cómo sube el fondo.' },
+            { tab: 'morosidad', hint: 'Cada aprobación actualiza quién está al día. Así se controla la morosidad sin planillas.' },
+            { tab: 'movimientos', hint: 'Todos los ingresos y gastos quedan ordenados por categoría. Usa los filtros.' }
+        ];
+        let step = 0;
+
+        function totals() {
+            const ing = st.movs.filter(x => x.m > 0).reduce((a, x) => a + x.m, 0);
+            const gas = st.movs.filter(x => x.m < 0).reduce((a, x) => a + x.m, 0);
+            const alDia = st.miembros.filter(x => x.pagado).length;
+            return { ing, gas, fondo: st.fondoInicial + ing + gas, pct: Math.round(alDia / st.miembros.length * 100) };
+        }
+
+        function setKpi(id, txt) {
+            const el = $(id);
+            if (el.textContent !== txt && el.textContent !== '$0' && el.textContent !== '0%') {
+                el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+            }
+            el.textContent = txt;
+        }
+
+        function render() {
+            const t = totals();
+            setKpi('tdFondo', clp(t.fondo));
+            setKpi('tdIng', clp(t.ing));
+            setKpi('tdGas', clp(t.gas));
+            setKpi('tdAlDia', t.pct + '%');
+
+            // Barras por categoría
+            const cats = {};
+            st.movs.forEach(x => { cats[x.cat] = (cats[x.cat] || 0) + x.m; });
+            const max = Math.max(...Object.values(cats).map(Math.abs));
+            $('tdBars').innerHTML = Object.entries(cats)
+                .sort((a, b) => b[1] - a[1])
+                .map(([c, v]) => `<div class="tdemo-bar"><span>${c}</span><div class="track"><div class="fill ${v < 0 ? 'out' : ''}" style="width:${Math.abs(v) / max * 100}%"></div></div><span class="val">${clp(v)}</span></div>`)
+                .join('');
+
+            // Comprobantes
+            const pill = $('tdPend');
+            pill.textContent = st.pendientes.length;
+            pill.classList.toggle('zero', st.pendientes.length === 0);
+            $('tdComp').innerHTML = st.pendientes.length
+                ? st.pendientes.map((p, i) => `<div class="tdemo-item ${p.nuevo ? 'new' : ''}">
+                        <div><div class="who">${p.n}</div><div class="meta">${p.cat} · ${p.fecha}</div></div>
+                        <span class="amt">${clp(p.monto)}</span>
+                        <span class="tdemo-actions">
+                            <button type="button" class="tdemo-btn" data-ok="${i}"><i class="fa-solid fa-check"></i> Aprobar</button>
+                            <button type="button" class="tdemo-ghost" data-no="${i}">Rechazar</button>
+                        </span></div>`).join('')
+                : '<p class="tdemo-empty">No hay comprobantes pendientes. Sube uno abajo para probar.</p>';
+            st.pendientes.forEach(p => delete p.nuevo);
+
+            // Selector de miembro
+            const sel = $('tdMiembro'), prev = sel.value;
+            sel.innerHTML = st.miembros.map(m => `<option>${m.n}</option>`).join('');
+            sel.value = prev || (st.miembros.find(m => !m.pagado) || st.miembros[0]).n;
+
+            // Morosidad
+            $('tdMeter').style.width = t.pct + '%';
+            $('tdMembers').innerHTML = [...st.miembros]
+                .sort((a, b) => a.pagado - b.pagado)
+                .map(m => `<div class="tdemo-item"><div><div class="who">${m.n}</div><div class="meta">${m.casa}</div></div>
+                    <span class="tdemo-badge ${m.pagado ? 'ok' : 'late'}">${m.pagado ? 'Al día' : 'Cuota pendiente'}</span></div>`).join('');
+
+            // Movimientos
+            const allCats = ['Todas', ...new Set(st.movs.map(x => x.cat))];
+            $('tdFilters').innerHTML = allCats.map(c => `<button type="button" class="${c === st.filtro ? 'active' : ''}" data-f="${c}">${c}</button>`).join('');
+            $('tdMovs').innerHTML = st.movs.filter(x => st.filtro === 'Todas' || x.cat === st.filtro)
+                .map(x => `<div class="tdemo-item ${x.nuevo ? 'new' : ''}"><div><div class="who">${x.d}</div><div class="meta">${x.cat}</div></div>
+                    <span class="amt ${x.m < 0 ? 'neg' : ''}">${clp(x.m)}</span></div>`).join('');
+            st.movs.forEach(x => delete x.nuevo);
+        }
+
+        function showTab(tab) {
+            root.querySelectorAll('.tdemo-tabs button').forEach(b => {
+                b.classList.toggle('active', b.dataset.tab === tab);
+                b.classList.remove('pulse');
+            });
+            root.querySelectorAll('.tdemo-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === tab));
+            const i = steps.findIndex(s => s.tab === tab);
+            if (i >= 0) { step = i; updateGuide(); }
+        }
+
+        function updateGuide() {
+            $('tdStep').textContent = `Paso ${step + 1} de ${steps.length}`;
+            $('tdHint').textContent = steps[step].hint;
+            $('tdPrev').disabled = step === 0;
+            $('tdPrev').style.opacity = step === 0 ? 0.5 : 1;
+            $('tdNext').textContent = step === steps.length - 1 ? 'Volver al inicio' : 'Siguiente';
+        }
+
+        function nudge(tab) {
+            const b = root.querySelector(`.tdemo-tabs button[data-tab="${tab}"]`);
+            if (b && !b.classList.contains('active')) b.classList.add('pulse');
+        }
+
+        root.addEventListener('click', (e) => {
+            const tabBtn = e.target.closest('.tdemo-tabs button');
+            if (tabBtn) return showTab(tabBtn.dataset.tab);
+
+            const ok = e.target.closest('[data-ok]');
+            if (ok) {
+                const p = st.pendientes.splice(+ok.dataset.ok, 1)[0];
+                const m = st.miembros.find(x => x.n === p.n);
+                if (p.cat === 'Cuotas' && m) m.pagado = true;
+                st.movs.unshift({ d: (p.cat === 'Cuotas' ? 'Cuota octubre · ' : 'Aporte · ') + p.n, cat: p.cat, m: p.monto, nuevo: true });
+                render(); nudge('morosidad');
+                $('tdHint').textContent = `Aprobado: ${clp(p.monto)} de ${p.n}. El fondo y la morosidad ya se actualizaron.`;
+                return;
+            }
+            const no = e.target.closest('[data-no]');
+            if (no) {
+                const p = st.pendientes.splice(+no.dataset.no, 1)[0];
+                render();
+                $('tdHint').textContent = `Rechazado: el comprobante de ${p.n} vuelve al vecino para corregirlo.`;
+                return;
+            }
+            const f = e.target.closest('[data-f]');
+            if (f) { st.filtro = f.dataset.f; render(); }
+        });
+
+        $('tdForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const monto = Math.max(1000, Math.round(+$('tdMonto').value || CUOTA));
+            st.pendientes.push({ n: $('tdMiembro').value, monto, fecha: 'recién', cat: 'Cuotas', nuevo: true });
+            render();
+            $('tdHint').textContent = 'Comprobante recibido. Ahora cambia de rol: como tesorera, apruébalo arriba.';
+        });
+
+        $('tdNext').addEventListener('click', () => showTab(steps[(step + 1) % steps.length].tab));
+        $('tdPrev').addEventListener('click', () => step > 0 && showTab(steps[step - 1].tab));
+        $('tdReset').addEventListener('click', () => { st = initial(); $('tdMiembro').value = ''; render(); showTab('resumen'); });
+
+        render(); updateGuide();
+    })();
+    </script>
+
+    <script>
+    /* Selector demo / página web en App Leen */
+    (function () {
+        const sw = document.querySelector('.view-switch');
+        if (!sw) return;
+        sw.addEventListener('click', (e) => {
+            const b = e.target.closest('button'); if (!b) return;
+            sw.querySelectorAll('button').forEach(x => x.classList.toggle('active', x === b));
+            const web = b.dataset.view === 'lweb';
+            document.getElementById('ldemo').hidden = web;
+            const w = document.getElementById('lweb'); w.hidden = !web;
+            const f = w.querySelector('iframe'); if (web && !f.src) f.src = f.dataset.src;
+        });
+    })();
+
+    /* Demo interactiva de App Leen: todo es simulado y se reinicia al recargar */
+    (function () {
+        const root = document.getElementById('ldemo');
+        if (!root) return;
+        const $ = (id) => document.getElementById(id);
+        const LBL = { registrado: 'Registrado', en_ruta: 'En ruta', entregado: 'Entregado', no_entregado: 'No entregado' };
+        const REPS = ['Luis Morales', 'Camila Reyes'];
+        const YO = 'Luis Morales';
+
+        const initial = () => ({
+            pk: [
+                { id: 'LEEN-1041', cli: 'Francisca Lagos', dir: 'Av. Grecia 2150, Ñuñoa', tienda: 'Mundo Mascotas', st: 'entregado', rep: 'Camila Reyes', h: ['09:02', '10:15', '11:40'] },
+                { id: 'LEEN-1042', cli: 'Rodrigo Castro', dir: 'Los Leones 845, Providencia', tienda: 'Deco Hogar', st: 'en_ruta', rep: 'Luis Morales', h: ['09:05', '10:20'] },
+                { id: 'LEEN-1043', cli: 'María José Pino', dir: 'Pedro de Valdivia 1320, Providencia', tienda: 'Mundo Mascotas', st: 'en_ruta', rep: 'Luis Morales', h: ['09:07', '10:21'] },
+                { id: 'LEEN-1044', cli: 'Tomás Salinas', dir: 'Irarrázaval 4410, Ñuñoa', tienda: 'Verde Vivo', st: 'registrado', rep: null, h: ['09:30'] },
+                { id: 'LEEN-1045', cli: 'Josefa Araya', dir: 'Macul 3021, Macul', tienda: 'Deco Hogar', st: 'registrado', rep: null, h: ['09:41'] },
+                { id: 'LEEN-1046', cli: 'Benjamín Ortiz', dir: 'Vicuña Mackenna 6890, La Florida', tienda: 'Verde Vivo', st: 'registrado', rep: null, h: ['09:58'] },
+                { id: 'LEEN-1047', cli: 'Antonia Vidal', dir: 'Los Militares 5600, Las Condes', tienda: 'Mundo Mascotas', st: 'entregado', rep: 'Camila Reyes', h: ['08:50', '10:10', '11:05'] }
+            ],
+            filtro: 'todos',
+            entregando: null,
+            foto: false,
+            firma: false
+        });
+        let st = initial();
+
+        const steps = [
+            { tab: 'pedidos', who: 'Admin', hint: 'El administrador ve todos los paquetes del día y en qué estado está cada uno.' },
+            { tab: 'carga', who: 'Admin', hint: 'Elige un repartidor y presiona "Escanear etiqueta": el paquete pasa a "En ruta".' },
+            { tab: 'ruta', who: 'Repartidor', hint: 'El repartidor ve su ruta. Presiona "Entregar", toma la foto o pide la firma y confirma.' },
+            { tab: 'seguimiento', who: 'Cliente', hint: 'El cliente sigue su pedido paso a paso, sin tener que llamar para preguntar.' }
+        ];
+        let step = 0;
+
+        const ahora = () => new Date().toLocaleTimeString('es-CL', { hour: '2-digit', minute: '2-digit', hour12: false });
+        const badge = (s) => `<span class="leen-st ${s}">${LBL[s]}</span>`;
+        const count = (s) => st.pk.filter(p => p.st === s).length;
+
+        function render() {
+            $('ldTotal').textContent = st.pk.length;
+            $('ldReg').textContent = count('registrado');
+            $('ldRuta').textContent = count('en_ruta');
+            $('ldEnt').textContent = count('entregado');
+
+            const fs = ['todos', 'registrado', 'en_ruta', 'entregado', 'no_entregado'];
+            $('ldFilters').innerHTML = fs.map(f => `<button type="button" class="${f === st.filtro ? 'active' : ''}" data-lf="${f}">${f === 'todos' ? 'Todos' : LBL[f]} (${f === 'todos' ? st.pk.length : count(f)})</button>`).join('');
+            $('ldPedidos').innerHTML = st.pk.filter(p => st.filtro === 'todos' || p.st === st.filtro).map(p =>
+                `<div class="tdemo-item"><div><div class="who">${p.id} · ${p.cli}</div><div class="meta">${p.dir} · ${p.tienda}${p.rep ? ' · ' + p.rep : ''}</div></div>${badge(p.st)}</div>`
+            ).join('') || '<p class="tdemo-empty">No hay paquetes en este estado.</p>';
+
+            const sel = $('ldRep'), pv = sel.value;
+            sel.innerHTML = REPS.map(r => `<option>${r}</option>`).join('');
+            sel.value = pv || YO;
+            const porCargar = st.pk.filter(p => p.st === 'registrado');
+            $('ldPorCargar').innerHTML = porCargar.map(p =>
+                `<div class="tdemo-item"><div><div class="who">${p.id}</div><div class="meta">${p.dir}</div></div>${badge(p.st)}</div>`
+            ).join('') || '<p class="tdemo-empty">Todos los paquetes ya salieron a ruta.</p>';
+            $('ldScan').disabled = porCargar.length === 0;
+
+            const mia = st.pk.filter(p => p.rep === YO && p.st !== 'registrado');
+            const pend = mia.filter(p => p.st === 'en_ruta').length;
+            $('ldRutaN').textContent = pend;
+            $('ldRutaN').classList.toggle('zero', pend === 0);
+            $('ldRutaTit').textContent = `Mi ruta · ${YO} (${pend} por entregar)`;
+            $('ldMiRuta').innerHTML = mia.sort((a, b) => (a.st !== 'en_ruta') - (b.st !== 'en_ruta')).map(p =>
+                `<div class="tdemo-item"><div><div class="who">${p.cli}</div><div class="meta">${p.dir} · ${p.id}</div></div>
+                 ${p.st === 'en_ruta'
+                    ? `<span class="tdemo-actions"><button type="button" class="tdemo-ghost" data-wa="${p.id}"><i class="fa-brands fa-whatsapp"></i> Avisar</button><button type="button" class="tdemo-btn" data-ent="${p.id}">Entregar</button></span>`
+                    : badge(p.st)}</div>`
+            ).join('') || '<p class="tdemo-empty">Sin paquetes asignados. Cárgalos desde "Admin · Cargar".</p>';
+
+            const tsel = $('ldTrack'), tv = tsel.value;
+            tsel.innerHTML = st.pk.map(p => `<option value="${p.id}">${p.id} · ${p.cli}</option>`).join('');
+            tsel.value = tv || 'LEEN-1042';
+            renderTimeline();
+        }
+
+        function renderTimeline() {
+            const p = st.pk.find(x => x.id === $('ldTrack').value) || st.pk[0];
+            const fail = p.st === 'no_entregado';
+            const items = [
+                ['fa-box', 'Registrado', `Recibimos tu pedido de ${p.tienda}`],
+                ['fa-truck', 'En ruta', p.rep ? `${p.rep} va camino a tu dirección` : 'Esperando salida a reparto'],
+                fail ? ['fa-xmark', 'No entregado', p.motivo || 'Se reprogramará la entrega'] : ['fa-check', 'Entregado', p.recibe ? `Recibido por ${p.recibe}` : 'Con foto y firma de quien recibe']
+            ];
+            $('ldTimeline').innerHTML = items.map((it, i) => {
+                const done = i < p.h.length;
+                const cls = done ? (fail && i === 2 ? 'fail' : 'done') : '';
+                return `<div class="leen-tl ${cls}"><span class="ico"><i class="fa-solid ${it[0]}"></i></span><div><b>${it[1]}${done ? ' · ' + p.h[i] : ''}</b><small>${it[2]}</small></div></div>`;
+            }).join('');
+        }
+
+        function showTab(tab) {
+            root.querySelectorAll('.tdemo-tabs button').forEach(b => { b.classList.toggle('active', b.dataset.tab === tab); b.classList.remove('pulse'); });
+            root.querySelectorAll('.tdemo-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === tab));
+            const i = steps.findIndex(s => s.tab === tab);
+            if (i >= 0) { step = i; updateGuide(); }
+            if (tab === 'ruta') sizeCanvas();
+        }
+        function updateGuide() {
+            $('ldStep').textContent = `Paso ${step + 1} de ${steps.length}`;
+            $('ldHint').textContent = steps[step].hint;
+            $('ldWho').textContent = steps[step].who;
+            $('ldPrev').disabled = step === 0;
+            $('ldPrev').style.opacity = step === 0 ? 0.5 : 1;
+            $('ldNext').textContent = step === steps.length - 1 ? 'Volver al inicio' : 'Siguiente';
+        }
+        const hint = (t) => { $('ldHint').textContent = t; };
+        const nudge = (tab) => { const b = root.querySelector(`.tdemo-tabs button[data-tab="${tab}"]`); if (b && !b.classList.contains('active')) b.classList.add('pulse'); };
+
+        // Firma
+        const cv = $('ldFirma'), ctx = cv.getContext('2d');
+        let drawing = false;
+        function sizeCanvas() {
+            const r = cv.getBoundingClientRect();
+            if (!r.width) return;
+            cv.width = r.width * 2; cv.height = r.height * 2;
+            ctx.setTransform(2, 0, 0, 2, 0, 0);
+            ctx.lineWidth = 2.2; ctx.lineCap = 'round'; ctx.strokeStyle = '#0B192C';
+        }
+        const pos = (e) => { const r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+        cv.addEventListener('pointerdown', (e) => { drawing = true; cv.setPointerCapture(e.pointerId); ctx.beginPath(); ctx.moveTo(...pos(e)); });
+        cv.addEventListener('pointermove', (e) => { if (!drawing) return; ctx.lineTo(...pos(e)); ctx.stroke(); if (!st.firma) { st.firma = true; canConfirm(); } });
+        cv.addEventListener('pointerup', () => { drawing = false; });
+        function clearFirma() { ctx.clearRect(0, 0, cv.width, cv.height); st.firma = false; canConfirm(); }
+        function canConfirm() { $('ldConfirmar').disabled = !(st.foto || st.firma); }
+
+        function openProof(id) {
+            st.entregando = id; st.foto = false;
+            $('ldProofId').textContent = id;
+            $('ldRecibe').value = '';
+            $('ldFoto').classList.remove('done');
+            $('ldFoto').innerHTML = '<i class="fa-solid fa-camera"></i> Tomar foto';
+            $('ldProof').hidden = false;
+            sizeCanvas(); clearFirma();
+            $('ldProof').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            hint('Toma una foto del paquete o pide la firma con el dedo. Con una de las dos ya puedes confirmar.');
+        }
+        function closeProof() { $('ldProof').hidden = true; st.entregando = null; }
+        function finish(estado, extra) {
+            const p = st.pk.find(x => x.id === st.entregando);
+            p.st = estado; Object.assign(p, extra);
+            while (p.h.length < 2) p.h.push(ahora());
+            p.h[2] = ahora();
+            closeProof(); render();
+            $('ldTrack').value = p.id; renderTimeline();
+            nudge('seguimiento');
+            hint(estado === 'entregado'
+                ? `Entregado ${p.id}. El cliente y el administrador ya lo ven actualizado.`
+                : `${p.id} quedó como no entregado. El administrador puede reprogramarlo.`);
+        }
+
+        root.addEventListener('click', (e) => {
+            const t = e.target.closest('.tdemo-tabs button'); if (t) return showTab(t.dataset.tab);
+            const f = e.target.closest('[data-lf]'); if (f) { st.filtro = f.dataset.lf; return render(); }
+            const wa = e.target.closest('[data-wa]');
+            if (wa) { const p = st.pk.find(x => x.id === wa.dataset.wa); return hint(`WhatsApp a ${p.cli}: "¡Tu pedido va en camino! Sigue la entrega en este enlace."`); }
+            const en = e.target.closest('[data-ent]'); if (en) return openProof(en.dataset.ent);
+        });
+
+        $('ldScan').addEventListener('click', () => {
+            const p = st.pk.find(x => x.st === 'registrado'); if (!p) return;
+            const sc = $('ldScanner'); sc.classList.remove('on'); void sc.offsetWidth; sc.classList.add('on');
+            $('ldScanTxt').textContent = 'Leyendo código…';
+            $('ldScan').disabled = true;
+            setTimeout(() => {
+                p.st = 'en_ruta'; p.rep = $('ldRep').value; p.h[1] = ahora();
+                $('ldScanTxt').textContent = `✓ ${p.id} cargado a ${p.rep}`;
+                render();
+                if (p.rep === YO) nudge('ruta');
+                hint(`${p.id} pasó a "En ruta" con ${p.rep}. ${p.rep === YO ? 'Ahora aparece en su ruta.' : ''}`);
+            }, 1300);
+        });
+        $('ldFoto').addEventListener('click', () => {
+            st.foto = true; $('ldFoto').classList.add('done');
+            $('ldFoto').innerHTML = '<i class="fa-solid fa-check"></i> Foto lista';
+            canConfirm();
+        });
+        $('ldBorrar').addEventListener('click', clearFirma);
+        $('ldCancel').addEventListener('click', () => { closeProof(); hint(steps[2].hint); });
+        $('ldConfirmar').addEventListener('click', () => finish('entregado', { recibe: $('ldRecibe').value.trim() }));
+        $('ldNoEnt').addEventListener('click', () => finish('no_entregado', { motivo: 'Nadie en el domicilio. Se reprogramará.' }));
+        $('ldTrack').addEventListener('change', renderTimeline);
+        $('ldNext').addEventListener('click', () => showTab(steps[(step + 1) % steps.length].tab));
+        $('ldPrev').addEventListener('click', () => step > 0 && showTab(steps[step - 1].tab));
+        $('ldReset').addEventListener('click', () => {
+            st = initial(); closeProof();
+            $('ldTrack').value = ''; $('ldScanTxt').textContent = 'Esperando etiqueta…';
+            render(); showTab('pedidos');
+        });
+
+        render(); updateGuide();
+    })();
+    </script>
 </body>
 </html>
