@@ -500,7 +500,7 @@
         }
 
         /* Formación: tarjetas lado a lado */
-        .formacion-lista { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .formacion-lista { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
         .formacion-item {
             display: flex; flex-direction: column; gap: 6px;
             background-color: var(--white); border: 1px solid var(--border-color); border-radius: var(--radius);
@@ -749,17 +749,9 @@
                     <div class="formacion-ico"><i class="fa-solid fa-chart-pie"></i></div>
                     <div>
                         <h3>Analista de Datos</h3>
-                        <p class="formacion-inst">Fundación Soymas</p>
+                        <p class="formacion-inst">Fundación SoyMás</p>
                     </div>
                     <span class="formacion-fecha en-curso">2026 · En curso</span>
-                </div>
-                <div class="formacion-item">
-                    <div class="formacion-ico"><i class="fa-solid fa-certificate"></i></div>
-                    <div>
-                        <h3>Certificación Excel Intermedio y Python</h3>
-                        <p class="formacion-inst">Open Academy</p>
-                    </div>
-                    <span class="formacion-fecha">2026</span>
                 </div>
                 <div class="formacion-item">
                     <div class="formacion-ico"><i class="fa-solid fa-graduation-cap"></i></div>
@@ -769,6 +761,22 @@
                         <p class="formacion-inst">Mención Convivencia Escolar</p>
                     </div>
                     <span class="formacion-fecha">2024 – 2025</span>
+                </div>
+                <div class="formacion-item">
+                    <div class="formacion-ico"><i class="fa-solid fa-certificate"></i></div>
+                    <div>
+                        <h3>Certificación Excel Intermedio</h3>
+                        <p class="formacion-inst">Santander Open Academy</p>
+                    </div>
+                    <span class="formacion-fecha">2026</span>
+                </div>
+                <div class="formacion-item">
+                    <div class="formacion-ico"><i class="fa-solid fa-laptop"></i></div>
+                    <div>
+                        <h3>Certificación Herramientas de Alfabetización Digital</h3>
+                        <p class="formacion-inst">Fundación SoyMás</p>
+                    </div>
+                    <span class="formacion-fecha">2026</span>
                 </div>
             </div>
         </div>
@@ -781,96 +789,6 @@
             <p class="section-subtitle">Casos de análisis de datos, visualización e inteligencia operacional</p>
 
             <div class="projects-grid">
-                <!-- YahPraise (AppSheet + Google Sheets) -->
-                <div class="project-card">
-                    <div>
-                        <span class="project-tag">AppSheet & Google Sheets</span>
-                        <h3 class="project-title">YahPraise</h3>
-                        <p class="project-desc">
-                            App de alabanzas escritas en sistema numérico para tocar banjo y mandolina. La construí en AppSheet sobre Google Sheets: cada alabanza guarda su tono, introducción, letra con los números de cada nota, coro y categoría, y se puede buscar, agregar y editar desde el celular.
-                        </p>
-
-                        <!-- ===== DEMO YAHPRAISE: réplica de las pantallas reales ===== -->
-                        <div class="yah-demo" id="yahDemo">
-                            <div class="yah-pasos" id="yahPasos">
-                                <button type="button" class="active" data-v="lista"><span>1</span> Lista de alabanzas</button>
-                                <button type="button" data-v="detalle"><span>2</span> Ver una alabanza</button>
-                                <button type="button" data-v="form"><span>3</span> Agregar alabanza</button>
-                                <button type="button" class="yah-reset" id="yahReset" title="Reiniciar demo"><i class="fa-solid fa-rotate-left"></i> Reiniciar</button>
-                            </div>
-                            <p class="yah-hint" id="yahHint">Toca una alabanza para ver su tono, introducción, letra y coro en sistema numérico.</p>
-                            <div class="project-preview yah-window">
-                                <div class="browser-bar">
-                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                    <span class="url">appsheet.com · YahPraise</span>
-                                </div>
-                                <iframe id="yahFrame" title="Demo de YahPraise" loading="lazy"></iframe>
-                            </div>
-                            <p class="yah-nota"><i class="fa-solid fa-circle-info"></i> Réplica de la app hecha en AppSheet. Los cambios que hagas aquí no se guardan.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- App Leen -->
-                <div class="project-card">
-                    <div>
-                        <span class="project-tag">Logística & SLAs</span>
-                        <h3 class="project-title">App Leen - Sistema de Repartos</h3>
-                        <p class="project-credit">En colaboración con Rocío Aguayo y Constanza Bau</p>
-                        <p class="project-desc">
-                            Análisis y diseño del flujo de trazabilidad en tiempo real para transportes y entregas. Monitoreo de estados operativos (Registrado, En Ruta, Entregado) e indicadores de volumen.
-                        </p>
-                        <!-- Selector: demo de la app / página web -->
-                        <div class="view-switch" role="tablist">
-                            <button type="button" class="active" data-view="ldemo"><i class="fa-solid fa-truck-fast"></i> Demo de la app</button>
-                            <button type="button" data-view="lweb"><i class="fa-solid fa-globe"></i> Página web</button>
-                        </div>
-
-                        <!-- ===== DEMO APP LEEN: pantallas reales de la app con datos ficticios ===== -->
-                        <div class="leen-demo" id="ldemo">
-                            <div class="leen-pasos">
-                                <span class="leen-kicker">Demo interactiva</span>
-                                <h4>Prueba la app como cada usuario</h4>
-                                <button type="button" class="leen-paso active" data-pantalla="login">
-                                    <span class="n">1</span><span><b>Ingreso</b><small>Elige el tipo de acceso. Los datos de prueba ya están escritos: toca «Iniciar sesión».</small></span>
-                                </button>
-                                <button type="button" class="leen-paso" data-pantalla="admin">
-                                    <span class="n">2</span><span><b>Administrador</b><small>Todos los paquetes del día. Toca «🚚 Cargar paquetes», elige a Luis Morales y escanea.</small></span>
-                                </button>
-                                <button type="button" class="leen-paso" data-pantalla="repartidor">
-                                    <span class="n">3</span><span><b>Repartidor</b><small>La ruta de Luis. Toca «🚚 Voy en camino» y después «✅ Entregado» con foto y firma.</small></span>
-                                </button>
-                                <button type="button" class="leen-paso" data-pantalla="cliente">
-                                    <span class="n">4</span><span><b>Cliente</b><small>Lo que ve quien espera su pedido: estado, historial y el camión en el mapa.</small></span>
-                                </button>
-                                <div class="leen-ctrl">
-                                    <button type="button" id="leenPrev" disabled>Anterior</button>
-                                    <button type="button" id="leenNext" class="prim">Siguiente</button>
-                                    <button type="button" id="leenReset">Reiniciar demo</button>
-                                </div>
-                                <p class="leen-nota">Pantallas reales de App Leen con datos ficticios. No se conecta a la app ni a sus clientes.</p>
-                            </div>
-                            <div class="leen-telefono">
-                                <div class="leen-pantalla" id="leenPantalla">
-                                    <div class="leen-cargando">Cargando App Leen…</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Página web del proyecto -->
-                        <div class="project-preview" id="lweb" hidden>
-                            <div class="browser-bar">
-                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                                <span class="url">rocioaguayo.github.io/app-repartos/pagina-web.html</span>
-                            </div>
-                            <iframe data-src="https://rocioaguayo.github.io/app-repartos/pagina-web.html" title="Página web de App Leen" loading="lazy"></iframe>
-                        </div>
-                    </div>
-                    <a href="https://rocioaguayo.github.io/app-repartos/pagina-web.html" target="_blank" rel="noopener" class="project-link">
-                        Ver página web en pantalla completa <i class="fa-solid fa-up-right-from-square"></i>
-                    </a>
-                </div>
-
                 <!-- Aura Global Logistic (Power BI) -->
                 <div class="project-card">
                     <div>
@@ -956,6 +874,97 @@ SWITCH(
                         </div>
                     </div>
                 </div>
+
+                <!-- App Leen -->
+                <div class="project-card">
+                    <div>
+                        <span class="project-tag">Logística & SLAs</span>
+                        <h3 class="project-title">App Leen - Sistema de Repartos</h3>
+                        <p class="project-credit">En colaboración con Rocío Aguayo y Constanza Bau</p>
+                        <p class="project-desc">
+                            Análisis y diseño del flujo de trazabilidad en tiempo real para transportes y entregas. Monitoreo de estados operativos (Registrado, En Ruta, Entregado) e indicadores de volumen.
+                        </p>
+                        <!-- Selector: demo de la app / página web -->
+                        <div class="view-switch" role="tablist">
+                            <button type="button" class="active" data-view="ldemo"><i class="fa-solid fa-truck-fast"></i> Demo de la app</button>
+                            <button type="button" data-view="lweb"><i class="fa-solid fa-globe"></i> Página web</button>
+                        </div>
+
+                        <!-- ===== DEMO APP LEEN: pantallas reales de la app con datos ficticios ===== -->
+                        <div class="leen-demo" id="ldemo">
+                            <div class="leen-pasos">
+                                <span class="leen-kicker">Demo interactiva</span>
+                                <h4>Prueba la app como cada usuario</h4>
+                                <button type="button" class="leen-paso active" data-pantalla="login">
+                                    <span class="n">1</span><span><b>Ingreso</b><small>Elige el tipo de acceso. Los datos de prueba ya están escritos: toca «Iniciar sesión».</small></span>
+                                </button>
+                                <button type="button" class="leen-paso" data-pantalla="admin">
+                                    <span class="n">2</span><span><b>Administrador</b><small>Todos los paquetes del día. Toca «🚚 Cargar paquetes», elige a Luis Morales y escanea.</small></span>
+                                </button>
+                                <button type="button" class="leen-paso" data-pantalla="repartidor">
+                                    <span class="n">3</span><span><b>Repartidor</b><small>La ruta de Luis. Toca «🚚 Voy en camino» y después «✅ Entregado» con foto y firma.</small></span>
+                                </button>
+                                <button type="button" class="leen-paso" data-pantalla="cliente">
+                                    <span class="n">4</span><span><b>Cliente</b><small>Lo que ve quien espera su pedido: estado, historial y el camión en el mapa.</small></span>
+                                </button>
+                                <div class="leen-ctrl">
+                                    <button type="button" id="leenPrev" disabled>Anterior</button>
+                                    <button type="button" id="leenNext" class="prim">Siguiente</button>
+                                    <button type="button" id="leenReset">Reiniciar demo</button>
+                                </div>
+                                <p class="leen-nota">Pantallas reales de App Leen con datos ficticios. No se conecta a la app ni a sus clientes.</p>
+                            </div>
+                            <div class="leen-telefono">
+                                <div class="leen-pantalla" id="leenPantalla">
+                                    <div class="leen-cargando">Cargando App Leen…</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Página web del proyecto -->
+                        <div class="project-preview" id="lweb" hidden>
+                            <div class="browser-bar">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                <span class="url">rocioaguayo.github.io/app-repartos/pagina-web.html</span>
+                            </div>
+                            <iframe data-src="https://rocioaguayo.github.io/app-repartos/pagina-web.html" title="Página web de App Leen" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    <a href="https://rocioaguayo.github.io/app-repartos/pagina-web.html" target="_blank" rel="noopener" class="project-link">
+                        Ver página web en pantalla completa <i class="fa-solid fa-up-right-from-square"></i>
+                    </a>
+                </div>
+
+                <!-- YahPraise (AppSheet + Google Sheets) -->
+                <div class="project-card">
+                    <div>
+                        <span class="project-tag">AppSheet & Google Sheets</span>
+                        <h3 class="project-title">YahPraise</h3>
+                        <p class="project-desc">
+                            App de alabanzas escritas en sistema numérico para tocar banjo y mandolina. La construí en AppSheet sobre Google Sheets: cada alabanza guarda su tono, introducción, letra con los números de cada nota, coro y categoría, y se puede buscar, agregar y editar desde el celular.
+                        </p>
+
+                        <!-- ===== DEMO YAHPRAISE: réplica de las pantallas reales ===== -->
+                        <div class="yah-demo" id="yahDemo">
+                            <div class="yah-pasos" id="yahPasos">
+                                <button type="button" class="active" data-v="lista"><span>1</span> Lista de alabanzas</button>
+                                <button type="button" data-v="detalle"><span>2</span> Ver una alabanza</button>
+                                <button type="button" data-v="form"><span>3</span> Agregar alabanza</button>
+                                <button type="button" class="yah-reset" id="yahReset" title="Reiniciar demo"><i class="fa-solid fa-rotate-left"></i> Reiniciar</button>
+                            </div>
+                            <p class="yah-hint" id="yahHint">Toca una alabanza para ver su tono, introducción, letra y coro en sistema numérico.</p>
+                            <div class="project-preview yah-window">
+                                <div class="browser-bar">
+                                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                    <span class="url">appsheet.com · YahPraise</span>
+                                </div>
+                                <iframe id="yahFrame" title="Demo de YahPraise" loading="lazy"></iframe>
+                            </div>
+                            <p class="yah-nota"><i class="fa-solid fa-circle-info"></i> Réplica de la app hecha en AppSheet. Los cambios que hagas aquí no se guardan.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
