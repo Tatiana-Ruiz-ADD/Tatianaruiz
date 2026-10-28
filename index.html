@@ -14,7 +14,7 @@
     <meta property="og:locale" content="es_CL">
 
     <!-- Favicon con tus iniciales -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F4C5C'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='%23FFFFFF'%3ETR%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234A2C5E'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='%23FFFFFF'%3ETR%3C/text%3E%3C/svg%3E">
 
     <!-- Google Fonts Minimalistas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,17 +25,17 @@
 
     <style>
         :root {
-            /* Paleta azul petróleo */
-            --mint-primary: #E07A5F;   /* acento terracota: detalles mínimos */
-            --mint-light: #E6F0F1;     /* fondo suave de etiquetas */
-            --mint-dark: #0F4C5C;      /* principal: botones, enlaces, títulos de acento */
-            --mint-dark-hover: #0A3A47;
-            --butter-bg: #F7F6F2;      /* arena muy clara */
+            /* Paleta ciruela y crema */
+            --mint-primary: #D98E73;   /* acento coral: detalles mínimos */
+            --mint-light: #F3ECF5;     /* fondo suave de etiquetas */
+            --mint-dark: #4A2C5E;      /* principal: botones, enlaces, títulos de acento */
+            --mint-dark-hover: #3A2149;
+            --butter-bg: #FBF8F4;      /* crema */
             --butter-card: #FFFFFF;
             --white: #FFFFFF;
-            --text-dark: #1F2933;
-            --text-muted: #52606D;
-            --border-color: #E4E2DC;
+            --text-dark: #2A2230;
+            --text-muted: #675C6E;
+            --border-color: #ECE4EA;
             --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.04);
             --shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.08);
             --radius: 12px;
@@ -499,6 +499,29 @@
             .yah-pasos .yah-reset { margin-left: 0; }
         }
 
+        /* Formación: tarjetas lado a lado */
+        .formacion-lista { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .formacion-item {
+            display: flex; flex-direction: column; gap: 6px;
+            background-color: var(--white); border: 1px solid var(--border-color); border-radius: var(--radius);
+            padding: 24px; box-shadow: var(--shadow-soft);
+        }
+        .formacion-ico {
+            width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 8px;
+            background-color: var(--mint-light); color: var(--mint-dark); font-size: 1.2rem;
+        }
+        .formacion-item h3 { font-size: 1.08rem; font-weight: 600; line-height: 1.35; }
+        .formacion-inst { font-size: 0.92rem; color: var(--text-muted); }
+        .formacion-fecha {
+            margin-top: auto; align-self: flex-start; transform: translateY(8px);
+            font-size: 0.85rem; font-weight: 500; color: var(--text-muted); white-space: nowrap;
+            border: 1px solid var(--border-color); border-radius: 999px; padding: 4px 12px;
+        }
+        .formacion-fecha.en-curso { background-color: var(--mint-dark); border-color: var(--mint-dark); color: var(--white); }
+        @media (max-width: 768px) {
+            .nav-links { gap: 14px; }
+        }
+
         /* Community / Teaching Card */
         .community-card {
             background-color: var(--butter-card);
@@ -581,6 +604,7 @@
             <a href="#" class="logo">Tatiana<span>Ruiz</span></a>
             <ul class="nav-links">
                 <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#formacion">Formación</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#experiencia">Trayectoria</a></li>
             </ul>
@@ -641,8 +665,44 @@
         </div>
     </section>
 
+    <!-- Formación -->
+    <section id="formacion" class="section-alt">
+        <div class="container">
+            <h2 class="section-title">Formación</h2>
+            <p class="section-subtitle">Estudios y certificaciones</p>
+
+            <div class="formacion-lista">
+                <div class="formacion-item">
+                    <div class="formacion-ico"><i class="fa-solid fa-chart-pie"></i></div>
+                    <div>
+                        <h3>Analista de Datos</h3>
+                        <p class="formacion-inst">Fundación Soymas</p>
+                    </div>
+                    <span class="formacion-fecha en-curso">2026 · En curso</span>
+                </div>
+                <div class="formacion-item">
+                    <div class="formacion-ico"><i class="fa-solid fa-certificate"></i></div>
+                    <div>
+                        <h3>Certificación Excel Intermedio y Python</h3>
+                        <p class="formacion-inst">Open Academy</p>
+                    </div>
+                    <span class="formacion-fecha">2026</span>
+                </div>
+                <div class="formacion-item">
+                    <div class="formacion-ico"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div>
+                        <h3>Inspector Educacional</h3>
+                        <p class="formacion-inst">CFT CENCO</p>
+                        <p class="formacion-inst">Mención Convivencia Escolar</p>
+                    </div>
+                    <span class="formacion-fecha">2024 – 2025</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Proyectos Destacados -->
-    <section id="proyectos" class="section-alt">
+    <section id="proyectos">
         <div class="container">
             <h2 class="section-title">Proyectos Destacados</h2>
             <p class="section-subtitle">Casos de análisis de datos, visualización e inteligencia operacional</p>
@@ -742,7 +802,7 @@
     </section>
 
     <!-- Trayectoria & Facilitación -->
-    <section id="experiencia">
+    <section id="experiencia" class="section-alt">
         <div class="container">
             <h2 class="section-title">Trayectoria & Facilitación Digital</h2>
             <p class="section-subtitle">Impacto social y capacitación en herramientas tecnológicas</p>
